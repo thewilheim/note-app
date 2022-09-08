@@ -61,7 +61,7 @@ function Main() {
 
         </div>
        </div>
-        {sortedNotes.length <= 0 ? <img  class="mx-auto w-1/5" src={AddNoteImg} alt="" /> 
+        {sortedNotes.length <= 0 ? <img  class="mx-auto w-1/5 h-[680px]" src={AddNoteImg} alt="" /> 
         : 
         <div class='grid grid-cols-2 gap-4 max-w-1/2 w-1/2 overflow-hidden h-[680px]' >
         {sortedNotes.map((note) => {
