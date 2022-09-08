@@ -6,7 +6,7 @@ function NoteCard({note, deleteNote}) {
   const navigate = useNavigate()
 
   return (
-    <div class='block p-5 w-full bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 text-lg'>
+    <div class='noteCard h-[340px]'>
         <div class="flex flex-row align-center justify-between mb-3" >
         <div class="flex text-center w-1/2">
         <input type="checkbox" class='mr-2' />
