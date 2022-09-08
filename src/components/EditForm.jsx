@@ -1,5 +1,5 @@
-import {React, useState} from 'react'
-import { useNavigate, useOutletContext } from 'react-router-dom'
+import {React, useEffect, useState} from 'react'
+import { useNavigate, useOutletContext, useParams } from 'react-router-dom'
 import uniqid from "uniqid"
 
 function CreateForm() {
@@ -8,15 +8,20 @@ function CreateForm() {
 
     const [notes, setNotes] = useOutletContext()
 
-    const [note, setNote] = useState({
-        title:"",
-        desc:"",
-        id: uniqid()
-    })
+    const {id} = useParams()
 
-    const addNote = () => {
-        setNotes([...notes, note])
+    const [note, setNote] = useState({})
+
+    const editNote = () => {
+        setNotes(notes.map(item => {
+            return item.id === id ? note : item
+        }));
     }
+
+
+    useEffect(() => {
+        setNote(notes.find(item => item.id === id));
+    }, [])
 
 
   return (
@@ -25,7 +30,7 @@ function CreateForm() {
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                New Note 
+                <span class="text-gray-400">Editing:</span> {note.title}
                 </h3>
             </div>
             <form class="p-6 space-y-6">
@@ -40,14 +45,14 @@ function CreateForm() {
             </form>
             <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={() => {
-                addNote(note)
+                editNote(note)
                 setNote({
                     title:"",
                     desc:"",
                     id: uniqid()
                 })
                 navigate(-1)
-                }}>Add Note</button>
+                }}>Edit Note</button>
 
 
 
