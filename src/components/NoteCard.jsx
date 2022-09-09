@@ -13,7 +13,7 @@ function NoteCard({note, deleteNote}) {
         <h1 class="text-2xl whitespace-nowrap">{note.title}</h1>
         </div>
         <div class="flex justify-between w-1/4">
-        <button onClick={() => navigate(`/edit/${note.id}`)}>Edit</button>
+        <button onClick={() => navigate(`/note-app/edit/${note.id}`)}>Edit</button>
         <button onClick={() => deleteNote(note.id)}>Delete</button>
         </div>
         </div>
