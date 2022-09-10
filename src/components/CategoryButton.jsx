@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 
-function CategoryButton({ name, filterDataByType, color }) {
+function CategoryButton({ name, setActiveType, color }) {
   const setActive = (e) => {
     let actives = document.querySelectorAll(".active");
     actives.forEach((item) => {
@@ -14,7 +14,7 @@ function CategoryButton({ name, filterDataByType, color }) {
     <div>
       <button
         onClick={(e) => {
-          filterDataByType(name.toLowerCase());
+          setActiveType(name.toLowerCase());
           setActive(e);
         }}
       >

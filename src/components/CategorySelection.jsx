@@ -1,27 +1,27 @@
 import React from "react";
 import CategoryButton from "./CategoryButton";
 
-function CategorySelection({ filterDataByType }) {
+function CategorySelection({ setActiveType }) {
   return (
     <div class="flex justify-between text-base font-medium items-center w-1/4 ">
       <CategoryButton
         name={"All"}
-        filterDataByType={filterDataByType}
+        setActiveType={setActiveType}
         color={"bg-orange-500"}
       />
       <CategoryButton
         name={"Home"}
-        filterDataByType={filterDataByType}
+        setActiveType={setActiveType}
         color={"bg-blue-500"}
       />
       <CategoryButton
         name={"Work"}
-        filterDataByType={filterDataByType}
+        setActiveType={setActiveType}
         color={"bg-purple-500"}
       />
       <CategoryButton
         name={"Personal"}
-        filterDataByType={filterDataByType}
+        setActiveType={setActiveType}
         color={"bg-green-500"}
       />
     </div>

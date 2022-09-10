@@ -1,7 +1,6 @@
-import { React, useState } from "react";
+import React from "react";
 
-function SearchBar(props) {
-  const { searchValue, setSearchValue } = props;
+function SearchBar({ searchValue, setSearchValue }) {
   return (
     <input
       type="text"
