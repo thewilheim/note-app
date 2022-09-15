@@ -16,7 +16,6 @@ function CreateForm() {
 
   const addNote = () => {
     setNotes([...notes, note]);
-    localStorage.setItem("noteList", JSON.stringify([...notes, note]));
   };
 
   return (
